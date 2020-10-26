@@ -1,0 +1,242 @@
+
+
+@media only screen and (max-width: 990px) {
+    /* Main heading */
+    .background-food .intro-heading{
+        font-size: 2rem;
+    }
+    /* Sub heading  */
+    .background-food .Typing-text-animation{
+        font-size: 1.5rem;
+    }
+    .explore-div #input-text-location{
+        width: 400px;
+    }
+    .explore-div #input-text-location:hover{
+        width: 420px;
+    }
+    
+    #container #head-form{
+        font-size: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 646px) {
+    /* Sub-Heading Typing-Text */
+    .background-food .Typing-text-animation{
+        font-size: 1rem;
+    }
+    /* changing animation type from typing animation to opacity/blur animation*/
+    .background-food .Typing-text-animation::before{
+        animation: type 5s linear infinite;
+        border-right: 0px;
+    }
+    /* Typing-text-animation keyframes*/
+    @keyframes type{
+        0%{
+            opacity: 1;
+            filter: blur(0px);
+        }
+        50%{
+            opacity: 1;
+            filter: blur(1px);
+        }
+        100%{
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+    /* Login/Sign-In Form */
+    #container{
+        width: 300px;
+    }
+    #container #head-form{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 411px) {
+    /* Em in nevigation bar */
+    .navigation-bar em{
+        font-size: 2.4rem;
+    }
+    /* Strong in navigation bar */
+    .navigation-bar strong{
+        font-size: 2.4rem;
+    }
+    /* changing margin of animated line  */
+    .background-food .Typing-text-animation{
+        margin-top: 30px;
+    }
+    /* decreasing the size of search bar */
+    .explore-div #input-text-location{
+        width: 300px;
+        height: 6vh;
+        transform: translateY(-40px);
+    }
+    .explore-div #input-text-location:hover{
+        width: 310px;
+        height: 6vh;
+    }
+    .explore-div #input-text-location::placeholder{
+        font-size: 1rem;
+    }
+    /* search logo */
+    .explore-div #input-text-search{
+        font-size: 30px;
+        transform: translateY(-40px);
+    }
+    .explore-div #input-text-search:hover{
+        font-size: 30px;
+    }
+
+    /* changing font size of best selling products */
+    .best-selling-food-section h1{
+        font-size: 2.4rem;
+    }
+    /* pav bhaji */
+    .best-selling-food-section #best-selling-food-div7 h1{
+        font-size: 2.4rem;
+    }
+    /* ice cream */
+    .best-selling-food-section #best-selling-food-div9 h1{
+        font-size: 2.3rem;
+    }
+    /* desserts */
+    .best-selling-food-section #best-selling-food-div10 h1{
+        font-size: 2.4rem;
+    }
+    /* japanese */
+    .best-selling-food-section #best-selling-food-div11 h1{
+        font-size: 2.4rem;
+    }
+    .best-selling-food-section #wrapper-dishes > div{
+        margin: 5px;
+    }
+
+
+    /* Navigation section  (overlap)*/
+    .overlay a{
+        font-size: 27px;
+    }
+
+    /* Rating giving page */
+    #rate{
+        width: 100%;
+    }
+    .rate-radio:not(:checked) > label:before {
+        font-size: 2.5rem;
+    }
+    
+}
+
+
+@media only screen and (max-width: 312px) {
+    /* Background food */
+    .background-food{
+        height: 600px;
+    }
+
+    /* Em in nevigation bar */
+    .navigation-bar em{
+        font-size: 2rem;
+    }
+    /* Strong in navigation bar */
+    .navigation-bar strong{
+        font-size: 2rem;
+    }
+
+    /* main heading */
+    .background-food .intro-heading{
+        font-size: 1.5rem;
+    }
+    /* sub heading */
+    .background-food .Typing-text-animation{
+        font-size: 0.9rem;
+        transform: translate(-50%,-40px);
+    }
+    
+    /* decreasing the size of search bar */
+    .explore-div #input-text-location{
+        width: 200px;
+        height: 6vh;
+        transform: translateY(-40px);
+    }
+    .explore-div #input-text-location:hover{
+        width: 210px;
+        height: 6vh;
+    }
+    .explore-div #input-text-location::placeholder{
+        font-size: 0.75rem;
+    }
+    /* search logo */
+    .explore-div #input-text-search{
+        font-size: 25px;
+        transform: translateY(-40px);
+    }
+    .explore-div #input-text-search:hover{
+        font-size: 25px;
+    }
+
+    /* decreasing font size of paragraph in collections */
+    .collections p{
+        font-size: 20px;
+    }
+        /* decreasing font size of main heading in collections */
+    .collections h1{
+        font-size: 45px;
+    }
+
+    
+    /* changing font size of best selling products */
+    .best-selling-food-section h1{
+        font-size: 1.8rem;
+    }
+    /* pav bhaji */
+    .best-selling-food-section #best-selling-food-div7 h1{
+        font-size: 1.8rem;
+    }
+    /* ice cream */
+    .best-selling-food-section #best-selling-food-div9 h1{
+        font-size: 1.8rem;
+    }
+    /* desserts */
+    .best-selling-food-section #best-selling-food-div10 h1{
+        font-size: 1.8rem;
+    }
+    /* japanese */
+    .best-selling-food-section #best-selling-food-div11 h1{
+        font-size: 1.8rem;
+    }
+    .best-selling-food-section #wrapper-dishes > div{
+        margin: 5px;
+    }
+    
+    /* Login/Sign-In Form */
+    #container{
+        width: 100%;
+    }
+
+    /* Footer section */
+    #footer-section em{
+        font-size: 2rem;
+    }
+
+    #footer-section strong{
+        font-size: 2rem;
+    }
+
+    /* User ratings  */
+    #rate-feed #head-user-ratings{
+        font-size: 5px;
+    }
+
+    /* Rating giving page */
+    .rate-radio:not(:checked) > label:before {
+        font-size: 2.5rem;
+    }
+
+    
+
+}

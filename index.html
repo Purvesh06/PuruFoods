@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puru Foods</title>
+
+    <!-- Stylesheet of Website-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Stylesheet Respnsive -->
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Icons stylesheet -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Logo In Title Bar stylesheet -->
+    <link rel="icon" href="Images Png/Pizza Png.png" type="image/x-icon">
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <!-- Navigation-Bar -->
+    <nav class="navigation-bar" id="navigation-bar">
+        <em>Puru</em>
+        <strong>Foods</strong>
+        <span style="font-size:40px;cursor:pointer" onclick="openNav()" class="bars-span">
+            <i class="fa fa-bars" aria-hidden="true" style="font-size: 40px;"></i>
+        </span>
+    </nav>
+
+    <!-- Bars In Navigation Bars -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+
+        <div class="overlay-content">
+            <a href="#home-page" onclick="closeNav()">Home</a>
+            <a href="#products" onclick="closeNav()">Products</a>
+            <a href="#container" onclick="closeNav()" id="contacts">Contact</a>
+            <a href="#" onclick="closeNav_openfeed()" id="feedback">Feedback & Ratings</a>
+        </div>
+    </div>
+
+
+    <!-- Feedback and Ratings -->
+    <div id="rate-feed" class="rate-feed">
+        <i class="fa fa-times" aria-hidden="true" onclick="closefeed()"></i>
+
+        <h1 style="color: white;text-align: center;font-size: 35px;" id="head-user-ratings">User Ratings</h1>
+
+        <div id="user-ratings">
+
+            <h2 style="color: white;font-size: 20px;text-align: center;">5 star</h2>
+            <div id="user-ratings5">
+                <div style="width: 65%;background: #43b443;padding: 6px;">
+                    65%
+                </div>
+            </div>
+            <h2 style="color: white;font-size: 20px;text-align: center;">4 star</h2>
+            <div id="user-ratings4">
+                <div style="width: 25%;background: #43b443;padding: 6px;">
+                    25%
+                </div>
+            </div>
+            <h2 style="color: white;font-size: 20px;text-align: center;">3 star</h2>
+            <div id="user-ratings3">
+                <div style="width: 9%;background: #43b443;padding: 6px;">
+                    9%
+                </div>
+            </div>
+            <h2 style="color: white;font-size: 20px;text-align: center;">2 star</h2>
+            <div id="user-ratings2">
+                <div style="width: 4%;background: #ff7b00;padding: 6px;">
+                    4%
+                </div>
+            </div>
+            <h2 style="color: white;font-size: 20px;text-align: center;">1 star</h2>
+            <div id="user-ratings1">
+                <div style="width: 2%;background: #ff0000;padding: 6px;">
+                    2%
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+
+        <button id="button-giveratings" value="Give Rating" onclick="open_ratings()">Give Rating & Feedback</button>
+    </div>
+
+    <!-- Giving rating Section -->
+    <section id="rate">
+        <i class="fa fa-times-circle" aria-hidden="true" onclick="close_ratings()"
+            style="transform: translate(-10%,-10%);"></i>
+
+        <div class="rate-radio">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text"></label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text"></label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text"></label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text"></label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text"></label>
+        </div>
+
+        <br>
+
+        <textarea placeholder="Leave a comment" style="width: 100%;height: 40%;position: relative;"></textarea>
+
+        <br>
+
+        <div class="like-dislike">
+            <i class="fa fa-thumbs-up" aria-hidden="true" onclick="like()" id="like"></i>
+            <i class="fa fa-thumbs-down" aria-hidden="true" onclick="dislike()" id="dislike"></i>
+        </div>
+
+        <button class="send-feedback" onclick="sendfeed()">Send Feedback/Rating</button>
+
+    </section>
+
+
+
+
+    <!-- Home -->
+    <section class="background-food" id="home-page">
+        <h1 class="intro-heading">Get Your Favorite Food ,Delivered by Puru Foods.</h1>
+
+        <h3 class="Typing-text-animation" data-text="Get the best food & drinks in Indore">Get the best food & drinks in
+            Indore</h3>
+
+        <div class="explore-div">
+            <input type="text" id="input-text-location" placeholder="Search for restaurant ,cuisine or dish">
+
+            <a href="">
+                <i class="fas fa-search" id="input-text-search"></i>
+
+            </a>
+        </div>
+
+    </section>
+
+
+    <br>
+
+
+    <!-- Food Menu -->
+    <div class="food-menu-div">
+        <div class="order-food">Order food Online</div>
+        <div class="get-meal">Get out for best Meal</div>
+        <div class="discount-50-percent"> 50% off in first order</div>
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Collections -->
+    <div class="collections">
+
+        <h1>Collections</h1>
+        <br>
+        <p>Explore curated lists of top restaurants, cafes, pubs, and bars in Indore, based on trends. <a href="#">All
+                Collections in Indore &rightarrow;</a></p>
+        <br>
+        <div id="collection-div">
+
+            <div class="collections-div-1">
+                <p>Trending </p>
+            </div>
+            <div class="collections-div-2">
+                <p>Best Of Indore</p>
+            </div>
+            <div class="collections-div-3">
+                <p>Great Coffee</p>
+            </div>
+            <div class="collections-div-4">
+                <p>Newly Opened</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Best Selling Products -->
+    <section class="best-selling-food-section" id="products">
+        <h1>Best Selling Products.</h1>
+        <div id="wrapper-dishes">
+            <div id="best-selling-food-div1" class="div-products-class">
+                <h1>Pizza</h1>
+                <div style="background: url(images/Pizza.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="pizza-zoom"></div>
+            </div>
+            <div id="best-selling-food-div2" class="div-products-class">
+                <h1>Burger</h1>
+                <div style="background: url(images/burger.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="burger-zoom"></div>
+            </div>
+            <div id="best-selling-food-div3" class="div-products-class">
+                <h1>Pasta</h1>
+                <div style="background: url(images/pasta.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="pasta-zoom"></div>
+            </div>
+            <div id="best-selling-food-div4" class="div-products-class">
+                <h1>Chinese</h1>
+                <div style="background: url(images/noodles.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="chinese-zoom"></div>
+            </div>
+            <div id="best-selling-food-div5" class="div-products-class">
+                <h1>Dosa</h1>
+                <div style="background: url(images/dosa.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="dosa-zoom"></div>
+            </div>
+            <div id="best-selling-food-div6" class="div-products-class">
+                <h1>Rolls</h1>
+                <div style="background: url(images/rolls.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="rolls-zoom"></div>
+            </div>
+            <div id="best-selling-food-div7" class="div-products-class">
+                <h1>Pav Bhaji</h1>
+                <div style="background: url(images/pav-bhaji.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="pav_bhaji-zoom"></div>
+            </div>
+            <div id="best-selling-food-div8" class="div-products-class">
+                <h1>Chicken</h1>
+                <div style="background: url(images/chicken-tandoori.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="chicken-zoom">
+                </div>
+            </div>
+            <div id="best-selling-food-div9" class="div-products-class">
+                <h1>Ice Cream</h1>
+                <div style="background: url(images/ice-cream.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="ice_cream-zoom"></div>
+            </div>
+            <div id="best-selling-food-div10" class="div-products-class">
+                <h1>Desserts</h1>
+                <div style="background: url(images/deserts.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="desserts-zoom"></div>
+            </div>
+            <div id="best-selling-food-div11" class="div-products-class">
+                <h1>Japanese</h1>
+                <div style="background: url(images/japanese.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="japanese-zoom"></div>
+            </div>
+            <div id="best-selling-food-div12" class="div-products-class">
+                <h1>Healthy</h1>
+                <div style="background: url(images/healthy.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="healthy-zoom"></div>
+            </div>
+            <div id="best-selling-food-div13" class="div-products-class">
+                <h1>French</h1>
+                <div style="background: url(images/french.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="french-zoom"></div>
+            </div>
+            <div id="best-selling-food-div14" class="div-products-class">
+                <h1>Bakery</h1>
+                <div style="background: url(images/bakery.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="bakery-zoom"></div>
+            </div>
+            <div id="best-selling-food-div15" class="div-products-class">
+                <h1>Indian</h1>
+                <div style="background: url(images/Indian.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="indian-zoom"></div>
+            </div>
+            <div id="best-selling-food-div16" class="div-products-class">
+                <h1> Thali</h1>
+                <div style="background: url(images/jumbo-thali.jpg) no-repeat center center/cover;transition: all 1s;"
+                    id="thali-zoom"></div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Form -->
+    <section class="form-section" id="form-disable">
+        <div class="container" id="container">
+                <div class="row">
+                    <h2 style="text-align:center" id="head-form">Login with Social Media or Manually</h2>
+
+                    <div class="col">
+                        <a href="#form-disable" class="fb btn1">
+                            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                        </a>
+                        <a href="#form-disable" class="twitter btn1">
+                            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                        </a>
+                        <a href="#form-disable" class="google btn1"><i class="fa fa-google fa-fw">
+                            </i> Login with Google+
+                        </a>
+                    </div>
+                    <br>
+                    <h2 style="text-align: center;">Or</h2>
+                    <br>
+                    <form action="#form-1" onsubmit="login()" id="form-1">
+                        <input type="email" placeholder="Email" id="email" class="formerror" required >
+                        <input type="password" placeholder="Password" id="password" required >
+                        <input type="submit" value="Login">
+                    </form>
+                </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <!-- <div style="height: 400px;width: 600px;background: rgba(255, 255, 255, 0.5);border: 15px solid black;display: block;position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);">
+        <h2>
+            
+        </h2>
+    </div> -->
+
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Footer Section -->
+    <section id="footer-section">
+        <em>Puru</em>
+        <strong>Foods</strong>
+    </section>
+    <div style="text-align: center;background: rgb(29, 29, 29);color: #fff;">Puru Foods &#169; 2020</div>
+
+</body>
+<script src="main.js"></script>
+
+</html>

@@ -1,0 +1,1227 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+
+/* Feedback and Ratings */
+#rate-feed{
+    height: 102vh;
+    width: 102vw;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    z-index: 100000;
+    display: none;
+    transform: translateY(-20px);
+    overflow: scroll;
+}
+
+#rate-feed .fa{
+    color: #fff;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+#rate-feed #user-ratings #user-ratings5{
+    background: rgb(194, 194, 194);
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#rate-feed #user-ratings #user-ratings4{
+    background: rgb(194, 194, 194);
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#rate-feed #user-ratings #user-ratings3{
+    background: rgb(194, 194, 194);
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#rate-feed #user-ratings #user-ratings2{
+    background: rgb(194, 194, 194);
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#rate-feed #user-ratings #user-ratings1{
+    background: rgb(194, 194, 194);
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#rate-feed #user-ratings h2{
+    transform: translateY(17px);
+}
+
+#button-giveratings{
+    padding: 10px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    display: block;
+    margin: 20px auto;
+    transition: .5s;
+    position: fixed;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-45%);
+    margin-bottom: 20px;
+}
+#button-giveratings:hover{
+    border: 2px solid red;
+    color: red;
+}
+
+/* Section of giving feedback and rating */
+#rate{
+    background: rgba(0, 0, 0, 0.7);
+    height: 85vh;
+    width: 333px;
+    display: none;
+    z-index: 1000000;
+    position: fixed;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+#rate .fa{
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+    /* radio buttons of rating */
+.rate-radio {
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    
+}
+.rate-radio:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate-radio:not(:checked) > label {
+    float: right;
+    width: 1.9em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+    transform: translateY(-20px) translateX(20px);
+   
+}
+.rate-radio:not(:checked) > label:before {
+    content: '★ ';
+    font-size: 4rem;
+    
+}
+.rate-radio > input:checked ~ label {
+    color: #ffc700;
+}
+.rate-radio:not(:checked) > label:hover,
+.rate-radio:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate-radio > input:checked + label:hover,
+.rate-radio > input:checked + label:hover ~ label,
+.rate-radio > input:checked ~ label:hover,
+.rate-radio > input:checked ~ label:hover ~ label,
+.rate-radio > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+    /* Textarea asking for a comment */
+#rate textarea{
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    color: white;
+    display: block;
+    margin: 20px auto;
+    transform: translateY(-10px);
+    box-sizing: border-box;
+    padding: 10px;
+    resize: none;
+}
+#rate textarea::placeholder{
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+    /* Like/Dislike */
+#rate .like-dislike .fa{
+    display: inline-block;
+    margin: 0px 15px;
+    transform: translateY(-30px);
+}
+
+#rate .like-dislike .fa:hover{
+    display: inline-block;
+    margin: 0px 15px;
+    color: rgb(177, 202, 255);
+    transform: translateY(-30px);
+}
+
+    /* Send Feedback Button */
+#rate .send-feedback{
+    padding: 10px;
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(rgb(105, 100, 100),white,rgb(112, 112, 112));
+    color: black;
+    border: 2px solid black;
+    transform: translateY(-40px);
+}
+
+
+
+
+
+
+/* Navigation-Bar */
+.navigation-bar{
+    background-color: #ffffff77;
+    position: fixed;
+    width: 100vw;
+    z-index: 100000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+/* Logo/headername */
+.navigation-bar em{
+    color: rgb(66, 245, 123);
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0px 10px;
+    text-shadow: 0 0 5px #1c4211;
+}
+.navigation-bar strong{
+    color: #000000;
+    font-size: 3em;
+    text-shadow: 0 0 10px #f5f5f5;
+}
+
+
+    /* Bars */
+.navigation-bar span{
+    color: black;
+    text-decoration:none;
+}
+
+/* Navigation section will appear when clicked on that bars */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100000000;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    transform: translateY(-20px);
+  }
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+.overlay .closebtn {
+    position: absolute;
+    top: 10%;
+    right: 45px;
+    font-size: 60px;
+  }
+.bars-span{
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+    top: 0;
+    margin: 15px;
+
+}
+
+
+
+
+
+/* Background-Food-Intro */
+    /* Home */
+.background-food{
+    background-image: url(https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png);
+    height: 700px;
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0 89%);
+    background-repeat: no-repeat;
+    background-size: center center/cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateY(-20px);
+}
+
+    /* Heading */
+.background-food .intro-heading{
+    position: relative;
+    color: white;
+    font-size: 2.6rem;
+    text-align: center;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 20px 0px;
+}
+    /* Sub-Heading Typing-Text */
+.background-food .Typing-text-animation{
+    color: transparent;
+    font-size: 1.9em;
+    position: absolute;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 20px 0px;
+}
+.background-food .Typing-text-animation::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+    border-right: 2px solid white;
+    animation: type 10s steps(40) infinite;
+
+}
+    /* Typing-text-animation keyframes*/
+@keyframes type{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+
+/* Search-Bar-div*/
+.explore-div{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,30%);
+}
+    /*Search-bar-Input type Text*/
+.explore-div #input-text-location{
+    position: relative;
+    height: 8vh;
+    width: 600px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px 0px red;
+    transition: 0.5s;
+    padding: 6px 0px;
+}
+        /*Search-bar-Input type Text {Hover}*/
+.explore-div #input-text-location:hover{
+    position: relative;
+    height: 8vh;
+    width: 580px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 2px 2px 5px 0px red;
+}
+    /* Logo Of Search  */
+.explore-div #input-text-search{
+    position: relative;
+    font-size: 40px;
+    padding: 5px;
+    color: white;
+    box-sizing: border-box;
+}
+        /* Logo Of Search {Hover}*/
+.explore-div #input-text-search:hover{
+    position: relative;
+    font-size: 40px;
+    padding: 5px;
+    color: rgb(153, 153, 153);
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+ /* Food Menu */
+    /* List */
+
+.food-menu-div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.food-menu-div div{
+    margin: 10px;
+}
+    /* Order-Food */
+.food-menu-div .order-food{
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(https://b.zmtcdn.com/webFrontend/64dffaa58ffa55a377cdf42b6a690e721585809275.png);
+    box-shadow: 6px 6px 10px grey ,
+                -6px -6px 10px black;
+    background-size: cover;
+    padding: 20px;
+    color: white;
+    font-size: 37px;
+    font-weight: 700;
+    text-shadow: 3px 3px 5px black ,
+                -3px -3px 5px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    /* Order-Food_Hover */
+.food-menu-div .order-food:hover{
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(https://b.zmtcdn.com/webFrontend/64dffaa58ffa55a377cdf42b6a690e721585809275.png);
+    box-shadow: 6px 6px 10px black ,
+                -6px -6px 10px grey;
+    background-size: cover;
+    color: white;
+    font-size: 37px;
+    font-weight: 700;
+    text-shadow: 3px 3px 5px black ,
+                -3px -3px 5px black;
+}
+
+    /* Get Meal */
+.food-menu-div .get-meal{
+    height: 200px;
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-SxzapJtGu0uJzWyQG-hBvRDw4QlyXltUvg&usqp=CAU);
+    background-repeat: no-repeat;
+    box-shadow: 6px 6px 10px grey ,
+                -6px -6px 10px black;
+    padding: 20px;
+    background-size: cover;
+    color: white;
+    font-size: 37px;
+    font-weight: 700;
+    text-shadow: 3px 3px 5px black ,
+                -3px -3px 5px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+                
+}
+    /* Get Meal_Hover */
+.food-menu-div .get-meal:hover{
+    box-shadow: 6px 6px 10px black ,
+                -6px -6px 10px grey;
+    text-shadow: 3px 3px 5px black ,
+                -3px -3px 5px black;
+
+}
+    /* Discount 50%*/
+.food-menu-div .discount-50-percent{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQuAtzKdBzFqk_KtNhq7vHPyJZPrje2PdIv9Q&usqp=CAU);
+    height: 200px;
+    width: 310px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background-repeat: no-repeat;
+    box-shadow: 6px 6px 10px grey ,
+                -6px -6px 10px black;
+    padding: 20px;
+    background-size: cover;
+    display: inline-block;
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    text-shadow: 3px 3px 5px black,
+                -3px -3px 5px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    /* Discount 50% {Hover} */
+.food-menu-div .discount-50-percent:hover{
+    box-shadow: 6px 6px 10px black ,
+                -6px -6px 10px grey;
+    text-shadow: 3px 3px 5px black,
+                -3px -3px 5px black;
+}
+
+
+
+
+
+/* Collections */
+.collections{
+    background-color: rgb(223, 223, 223);
+    width: 100%;
+    box-sizing: border-box;
+}
+.collections #collection-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    position: relative;
+}
+    /* Heading of Collection */
+.collections h1{
+    font-size: 50px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 1px 5px black ,
+                -1px -1px 5px black;
+    text-align: center;
+}
+    /* Sub-heading of Collections */
+.collections p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+
+}
+    /* All Collections of Indore */
+.collections p a{
+    font-size: 20px;
+    color: red;
+    text-decoration: none;
+}
+    /* Common Divs */
+.collections .collections-div-1,
+.collections .collections-div-2,
+.collections .collections-div-3,
+.collections .collections-div-4{
+    border-radius: 5%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 7px black ,
+                -5px -5px 7px grey;
+    margin: 20px;
+}
+
+.collections .collections-div-1:hover,
+.collections .collections-div-2:hover,
+.collections .collections-div-3:hover,
+.collections .collections-div-4:hover
+{
+    border: 2px solid black;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 7px grey ,
+                -5px -5px 7px black;
+
+}
+    /* Trending */
+.collections .collections-div-1{
+    height: 300px;
+    width: 250px;
+    background-image: url(images/foods-image.jpeg) ;
+}
+    /* Best Of Indore */
+.collections .collections-div-2{
+    height: 300px;
+    width: 250px;
+    background: url(images/RajWada.jpeg) no-repeat center center/cover;
+}
+    /* Great Coffee */
+.collections .collections-div-3{
+    height: 300px;
+    width: 250px;
+    background: url(images/coffee.jpeg) no-repeat center center/cover;
+
+}
+    /* Newly Opened */
+.collections .collections-div-4{
+    height: 300px;
+    width: 250px;
+    background: url(images/newly-opened.jpeg) no-repeat center center/cover;
+}
+.collections div p{
+    background-color: rgba(0, 0, 0,0.6);
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+
+/* Some Best Selling Products */
+.best-selling-food-section h1{
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    font-weight: 900;
+    font-style: italic;
+    font-family: cursive;
+}
+.best-selling-food-section #wrapper-dishes{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.best-selling-food-section #wrapper-dishes div{
+    border-radius: 10px;
+    margin: 15px;
+}
+
+    /* Best Selling Food div  */
+.best-selling-food-section div{
+    margin: 10px;
+    cursor: pointer;
+}
+        /* Pizza */
+.best-selling-food-section #best-selling-food-div1 #pizza-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div1{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div1:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div1 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Burger */
+.best-selling-food-section #best-selling-food-div2 #burger-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div2{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div2:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+
+}
+.best-selling-food-section #best-selling-food-div2 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Pasta */
+.best-selling-food-section #best-selling-food-div3 #pasta-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div3{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div3:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div3 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Chinese */
+.best-selling-food-section #best-selling-food-div4 #chinese-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div4{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div4:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div4 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Dosa */
+.best-selling-food-section #best-selling-food-div5 #dosa-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div5{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div5:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div5 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Rolls */
+.best-selling-food-section #best-selling-food-div6 #rolls-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div6{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div6:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div6 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Pav bhaji */
+.best-selling-food-section #best-selling-food-div7 #pav_bhaji-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div7{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div7:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div7 h1{
+    float: right;
+    font-size: 2.7rem;
+    margin-right: 0px;
+    font-weight: 100;
+}
+
+        /* Chicken */
+.best-selling-food-section #best-selling-food-div8 #chicken-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div8{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div8:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div8 h1{
+    float: right;
+    font-weight: 100;
+    margin-right: 10px;
+}
+
+        /* Ice Cream */
+.best-selling-food-section #best-selling-food-div9 #ice_cream-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div9{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div9:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div9 h1{
+    float: right;
+    font-weight: 100;
+    margin-right: 0px;
+    font-size: 2.6rem;
+}
+
+        /* Desserts */
+.best-selling-food-section #best-selling-food-div10 #desserts-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div10{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div10:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div10 h1{
+    float: right;
+    margin-right: 0px;
+    font-size: 2.8rem;
+    font-weight: 100;
+}
+
+        /* Japanese */
+.best-selling-food-section #best-selling-food-div11 #japanese-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div11{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div11:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div11 h1{
+    float: right;
+    margin-right: 0px;
+    font-weight: 100;
+    font-size: 2.8rem;
+}
+
+        /* Healthy */
+.best-selling-food-section #best-selling-food-div12 #healthy-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div12{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div12:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div12 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+    /* French */
+.best-selling-food-section #best-selling-food-div13 #french-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div13{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div13:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div13 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+    /* Bakery */
+.best-selling-food-section #best-selling-food-div14 #bakery-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div14{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div14:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div14 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Indian */
+.best-selling-food-section #best-selling-food-div15 #indian-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div15{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div15:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div15 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+        /* Thali */
+.best-selling-food-section #best-selling-food-div16 #thali-zoom:hover{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+.best-selling-food-section #best-selling-food-div16{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+}
+.best-selling-food-section #best-selling-food-div16:hover{
+    height: 80px;
+    width: 300px;
+    border: 2px solid black;
+    background: rgb(236, 236, 236);
+}
+.best-selling-food-section #best-selling-food-div16 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+.best-selling-food-section #best-selling-food-div1 h1{
+    float: right;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+.best-selling-food-section div div{
+    height: 50px;
+    width: 70px;
+    border-radius: 15%;
+}
+
+
+/* Login/Sign-In Form */
+    /* Form Section */
+.form-section{
+    background: rgb(131, 131, 131);
+    padding: 50px 0px;
+    width: 100%;
+    margin-top: -50px;
+}
+    /* style the container */
+#container {
+    position: relative;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    padding: 20px 0 30px 0;
+    display: block;
+    width: 400px;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid rgba(0, 0, 0, 0.466);
+    box-shadow: 10px 0px 30px 0px #00ff00,
+                -10px 0px 30px 0px #00e1ff,
+                0px 10px 30px 5px #eeff00,
+                0px -10px 30px 5px #ff0000;
+    animation: animate_box-shadow 2s linear infinite;
+}
+
+/* Animation Of Box-Shadow of Form */
+@keyframes animate_box-shadow{
+    0%{
+        box-shadow: 10px 0px 30px 0px #00ff00,
+                -10px 0px 30px 0px #00e1ff,
+                0px 10px 30px 5px #eeff00,
+                0px -10px 30px 5px #ff0000;
+    }
+    25%{
+        box-shadow:0px -10px 30px 5px #ff0000,
+                 10px 0px 30px 0px #00ff00,
+                -10px 0px 30px 0px #00e1ff,
+                0px 10px 30px 5px #eeff00,
+                ;
+    }
+    50%{
+        box-shadow:0px 10px 30px 5px #eeff00,
+            0px -10px 30px 5px #ff0000,
+            10px 0px 30px 0px #00ff00,
+            -10px 0px 30px 0px #00e1ff;
+    }
+    100%{
+        box-shadow: -10px 0px 30px 0px #00e1ff,
+            0px 10px 30px 5px #eeff00,
+            0px -10px 30px 5px #ff0000,
+            10px 0px 30px 0px #00ff00;
+    }
+}
+
+    /* style inputs and link buttons */
+.btn1{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+}
+.btn1:hover{
+    opacity: 1;
+}
+
+.container .row input{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.container .row input:hover{
+    opacity: 1;
+}
+
+.btn{
+    color: black;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+.btn:hover{
+    color: black;
+}
+.col2{
+    background: grey;
+    width: 200px;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    margin: 5px auto;
+}
+.col2:hover{
+    opacity: .68;
+}
+  /* add appropriate colors to fb, twitter and google buttons */
+.container .row .fb {
+    background-color: #3B5998;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.container .row .twitter {
+    background-color: #55ACEE;
+    color: white;
+    text-align: center;
+}
+
+.container .row .google {
+    background-color: #dd4b39;
+    color: white;
+    text-align: center;
+}
+
+  /* style the submit button */
+.container input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.container input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+/* Footer Section */
+#footer-section{
+    background: #000000;
+    height: 15vh;
+    margin: 0;
+    margin-top: -15vh;
+}
+#footer-section em{
+    color: rgb(66, 245, 123);
+    font-size: 3em;
+    margin:5px 5px;
+    font-weight: 700;
+    position: relative;
+    top: 10px;
+}
+
+#footer-section strong{
+    color: #ffffff;
+    font-size: 3em;
+    margin: 5px 5px;
+    position: relative;
+    top: 10px;
+}
+
+
+
+
+
+
